@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     // Run SonarQube analysis
-                    sh "./gradlew sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
+                    sh "./gradlew sonarqube -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
                 }
             }
         }
