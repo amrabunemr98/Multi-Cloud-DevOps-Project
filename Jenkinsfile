@@ -40,7 +40,7 @@ pipeline {
                 script {
                     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
                         // Download and install OpenShift Client Tools
-                        def ocHome = tool name: 'openshift', type: 'oc-tool', version: ''
+                        def ocHome = tool name: 'openshift', type: 'oc-tool', version: '3.9.0'
                         env.PATH = "${ocHome}:${env.PATH}"                  
                         
                         // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
