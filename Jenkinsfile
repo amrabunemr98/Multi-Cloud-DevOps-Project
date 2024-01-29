@@ -11,7 +11,7 @@ pipeline {
         SONAR_PROJECT_KEY = 'test-project'
         SONAR_HOST_URL = 'http://54.193.207.61:9000'
         SONAR_SCANNER_HOME = tool 'SonarQube'
-        OPENSHIFT_VERSION = '4.9.0'
+        OPENSHIFT_VERSION = '3.9.0'
     }
 
     stages {
