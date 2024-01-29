@@ -41,7 +41,7 @@ pipeline {
                 script {
                     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
                     def ocHome = tool name: 'openshift', type: 'oc-tool', version: "${OPENSHIFT_VERSION}"
-                    env.PATH = "${ocHome}:${env.PATH}"                   
+                    env.PATH = "${ocHome}:${env.PATH}"                  
                         // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
                         sh "sed -i 's|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTagApp}|g' ./deployment.yml"
                         
