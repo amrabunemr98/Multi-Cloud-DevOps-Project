@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh ' docker build -t gradle-test ${docker_file_app} '
 
-}
+            }
         }
         stage('Build and Unit Test') {
             steps {
