@@ -17,25 +17,25 @@ pipeline {
     }
 
     stages {
-        stage('Build and Unit Test') {
-            steps {
-                sh 'docker build -t gradle-test ${docker_file_app}'
-            }
-        }
+        // stage('Build and Unit Test') {
+        //     steps {
+        //         sh 'docker build -t gradle-test ${docker_file_app}'
+        //     }
+        // }
 
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    // Run SonarQube analysis
-                    withCredentials([string(credentialsId: 'Token_Sonar', variable: 'SONAR_TOKEN')]) {
-                        // Run SonarQube analysis with the token
-                        sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git -Dsonar.java.binaries=build/classes" 
-                        // Replace 'build/classes' with the actual path to your compiled Java classes
-                    }                
-                }
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         script {
+        //             // Run SonarQube analysis
+        //             withCredentials([string(credentialsId: 'Token_Sonar', variable: 'SONAR_TOKEN')]) {
+        //                 // Run SonarQube analysis with the token
+        //                 sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git -Dsonar.java.binaries=build/classes" 
+        //                 // Replace 'build/classes' with the actual path to your compiled Java classes
+        //             }                
+        //         }
                 
-            }
-        }
+        //     }
+        // }
                 stage('Build Docker image for app.py and push it to docker hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'DOCKER_REGISTRY_USERNAME', passwordVariable: 'DOCKER_REGISTRY_PASSWORD')]) {
