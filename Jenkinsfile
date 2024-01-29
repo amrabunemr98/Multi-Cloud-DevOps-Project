@@ -34,15 +34,7 @@ pipeline {
             }
         }
 
-        stage('Install OpenShift Client Tools') {
-            steps {
-                script {
-                    // Download and install OpenShift Client Tools
-                    def ocHome = tool 'openshift', "openshift-client-${OPENSHIFT_VERSION}"
-                    env.PATH = "${ocHome}/:${env.PATH}"
-                }
-            }
-        }
+
 
         stage('Deploy to OpenShift') {
             steps {
