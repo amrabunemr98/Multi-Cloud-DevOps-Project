@@ -1,6 +1,7 @@
 pipeline {
     agent any
     environment {
+        // Define other environment variables...
         DOCKER_REGISTRY = "amrabunemr98"
         DOCKER_IMAGE = "test"
         imageTagApp = "build-${BUILD_NUMBER}-app"
@@ -34,14 +35,14 @@ pipeline {
             }
         }
 
-
-
         stage('Deploy to OpenShift') {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
-                    def ocHome = tool name: 'openshift', type: 'oc-tool', version: "${OPENSHIFT_VERSION}"
-                    env.PATH = "${ocHome}:${env.PATH}"                  
+                        // Download and install OpenShift Client Tools
+                        def ocHome = tool 'openshift', "openshift-client-${OPENSHIFT_VERSION}"
+                        env.PATH = "${ocHome}:${env.PATH}"                  
+                        
                         // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
                         sh "sed -i 's|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTagApp}|g' ./deployment.yml"
                         
