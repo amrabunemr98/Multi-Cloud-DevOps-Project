@@ -12,16 +12,16 @@ COPY ../gradle gradle
 COPY ../build.gradle settings.gradle ./
 
 # Give execute permissions to the Gradle Wrapper
-RUN chmod +x ../gradlew
+RUN chmod +x gradlew
 
 # Download and resolve dependencies using the Gradle Wrapper
-RUN ./../gradlew dependencies
+RUN ./gradlew dependencies
 
 # Copy the rest of the source code
 COPY ../ .
 
 # Give execute permissions to the Gradle Wrapper
-RUN chmod +x ../gradlew
+RUN chmod +x gradlew
 
 # Run tests using the Gradle Wrapper
-RUN ./../gradlew test --stacktrace
+RUN ./gradlew test --stacktrace
