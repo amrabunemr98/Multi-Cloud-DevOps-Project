@@ -25,8 +25,13 @@ pipeline {
             steps {
                 script {
                     // Run SonarQube analysis
-                    sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${Token_Sonar} -Dsonar.scm.provider=git -Dsonar.java.binaries=build/classes" 
+                    withCredentials([string(credentialsId: 'Token_Sonar', variable: 'SONAR_TOKEN')]) {
+                        // Run SonarQube analysis with the token
+                        sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git -Dsonar.java.binaries=build/classes" 
+                        // Replace 'build/classes' with the actual path to your compiled Java classes
+                    }                
                 }
+                
             }
         }
 
