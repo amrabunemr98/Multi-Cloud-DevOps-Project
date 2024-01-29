@@ -10,6 +10,8 @@ pipeline {
         SONAR_PROJECT_KEY = 'test-project'
         SONAR_HOST_URL = 'http://54.193.207.61:9000'
         SONAR_TOKEN = 'squ_49ecf46a93d4ca3e7fdb60b0cd80bf31895b6fa8'
+        SONAR_SCANNER_HOME = tool 'SonarQube'
+
     }
 
     stages {
@@ -23,8 +25,7 @@ pipeline {
             steps {
                 script {
                     // Run SonarQube analysis
-                    def scannerHome = tool 'SonarQube_Scanner'
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
+                    sh "${SONAR_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
                 }
             }
         }
