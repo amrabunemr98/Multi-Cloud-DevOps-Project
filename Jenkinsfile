@@ -11,6 +11,8 @@ pipeline {
         SONAR_HOST_URL = 'http://54.193.207.61:9000'
         // SONAR_TOKEN = 'squ_49ecf46a93d4ca3e7fdb60b0cd80bf31895b6fa8'
         SONAR_SCANNER_HOME = tool 'SonarQube'
+        OPENSHIFT_VERSION = '4.9.0'
+
 
     }
 
@@ -54,12 +56,22 @@ pipeline {
             }
         }
 
-
+        stage('Install OpenShift Client Tools') {
+            steps {
+                script {
+                    // Download and install OpenShift Client Tools
+                    def ocHome = tool 'openshift', "openshift-client-${OPENSHIFT_VERSION}"
+                    env.PATH = "${ocHome}/:${env.PATH}"
+                }
+            }
+        }
         stage('Deploy to OpenShift') {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
-                                            
+                    
+                    def ocHome = tool 'oc', "openshift-client-${OPENSHIFT_VERSION}"
+                    env.PATH = "${ocHome}/:${env.PATH}"                        
                     // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
                     sh "sed -i \'s|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTagApp}|g\' ./deployment.yml"
                     
