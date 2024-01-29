@@ -6,7 +6,7 @@ pipeline {
         imageTagApp = "build-${BUILD_NUMBER}-app"
         imageNameapp = "${DOCKER_REGISTRY}:${imageTagApp}"
         OPENSHIFT_PROJECT = 'abu-nemr'
-        docker_file_app = 'Build-UnitTest/Dockerfile'
+        docker_file_app = 'Build-UntitTest/Dockerfile'
 
     }
 
