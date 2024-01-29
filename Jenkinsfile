@@ -12,7 +12,9 @@ pipeline {
     stages {
         stage('Build and Unit Test') {
             steps {
+                sh ' chmod +x gradlew '
                 sh ' ./gradlew dependencies '
+                sh ' chmod +x gradlew '
                 sh ' ./gradlew test '
 
 }
