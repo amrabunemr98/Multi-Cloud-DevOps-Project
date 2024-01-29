@@ -7,6 +7,10 @@ pipeline {
         imageNameapp = "${DOCKER_REGISTRY}:${imageTagApp}"
         OPENSHIFT_PROJECT = 'abu-nemr'
         docker_file_app = 'Build-UntitTest/'
+        SONAR_PROJECT_KEY = 'test-project'
+        SONAR_HOST_URL = 'http://54.193.207.61:9000'
+        SONAR_TOKEN = 'squ_49ecf46a93d4ca3e7fdb60b0cd80bf31895b6fa8'
+
 
     }
 
@@ -16,6 +20,12 @@ pipeline {
                 sh ' docker build -t gradle-test ${docker_file_app} '
 
 }
+        }
+        stage('Build and Unit Test') {
+                    withSonarQubeEnv('SonarQube') {
+                        // Run SonarQube analysis
+                        sh "./gradlew sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
+                    }
         }
     }
 }
