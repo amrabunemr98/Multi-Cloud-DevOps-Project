@@ -21,9 +21,13 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                // Run SonarQube analysis
-                sh "sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
+                script {
+                    // Run SonarQube analysis
+                    def scannerHome = tool 'SonarQube_Scanner'
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.login=${SONAR_TOKEN} -Dsonar.scm.provider=git"
+                }
             }
         }
+
     }
 }
