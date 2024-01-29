@@ -56,24 +56,16 @@ pipeline {
             }
         }
 
-        stage('Install OpenShift Client Tools') {
-            steps {
-                script {
-                    // Download and install OpenShift Client Tools
-                    def ocHome = tool 'openshift', "openshift-client-${OPENSHIFT_VERSION}"
-                    env.PATH = "${ocHome}/:${env.PATH}"
-                }
-            }
-        }
+
         stage('Deploy to OpenShift') {
             steps {
                 script {
                     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
                     
-                    def ocHome = tool 'oc', "openshift-client-${OPENSHIFT_VERSION}"
+                    def ocHome = tool 'openshift'
                     env.PATH = "${ocHome}/:${env.PATH}"                        
                     // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
-                    sh "sed -i \'s|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTagApp}|g\' ./deployment.yml"
+                    sh "sed -i 's|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${imageTagApp}|g' ./deployment.yml"
                     
                     // Apply the deployment file
                     sh "oc apply -f deployment.yml -n ${OPENSHIFT_PROJECT} --kubeconfig=\$OPENSHIFT_SECRET"
@@ -81,7 +73,7 @@ pipeline {
                 }
             }
         }
-    }
+
 
     }
 }
