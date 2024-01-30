@@ -35,7 +35,8 @@ pipeline {
             steps {
                 script {
                     node {
-                        SonarQubeTest(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
+                        // SonarQubeTest(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
+                        SonarQubeTest.ll()
                     }
                 }
             }
