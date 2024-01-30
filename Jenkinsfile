@@ -18,7 +18,7 @@ pipeline {
         stage (test) {
             steps{
                 script {
-                    SonarQube.call()
+                    SonarQube()
                 }
             }
         }
