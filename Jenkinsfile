@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     node {
-                        SonarQubeTest.sonarqubetest(1 ,20)
+                        SonarQubeTest.sonarqubetest(1, 20, 2, 3)
                     }
                 }
             }
