@@ -1,4 +1,6 @@
-def call() {}
+def call() {
+    BuildAppAndUnitTest
+}
 
 
 def BuildAppAndUnitTest(string docker_file_app) {
