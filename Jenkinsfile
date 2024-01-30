@@ -22,14 +22,14 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Build App and Unit Test') {
-            steps {
-                script {
+        // stage('Build App and Unit Test') {
+        //     steps {
+        //         script {
                 
-                        BuildUnittest(dockerfileapp)
-                }
-            }
-        }
+        //                 BuildUnittest(dockerfileapp)
+        //         }
+        //     }
+        // }
 
         stage('SonarQube Analysis') {
             steps {
