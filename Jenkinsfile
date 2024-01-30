@@ -1,14 +1,14 @@
 @Library('deploy-my-project') _
-def docker-file-app = '../Build-UntitTest/'
+def dockerfileapp = 'Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
-def SONAR-SCANNER-HOME = 'tool 'SonarQube''
-def SONAR-PROJECT-KEY = 'test-project'
-def SONAR-HOST-URL = 'http://54.183.182.49:9000'
+def SonarScannerHome = 'tool 'SonarQube''
+def SonarProjectKey = 'test-project'
+def SonarHostUrl = 'http://54.183.182.49:9000'
 def Dockerhub = 'Dockerhub'
-def DOCKER-REGISTRY = "amrabunemr98"
-def DOCKER-IMAGE = "Project-APP"
+def DockerRegistry = "amrabunemr98"
+def DockerImage = "Project-APP"
 def OpenShiftConfig = "OpenShiftConfig"
-def OPENSHIFT-PROJECT = 'abu-nemr'
+def OpenShiftProject = 'abu-nemr'
 
 
 pipeline {
@@ -19,7 +19,7 @@ pipeline {
         stage('Build App and Unit Test') {
             steps {
                 script{
-                   BuildAppAndUnitTest.BuildAppAndUnitTest(docker-file-app)
+                   BuildAppAndUnitTest.BuildAppAndUnitTest(dockerfileapp)
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    SonarQube.sonarqube(Token_Sonar, SONAR-SCANNER-HOME, SONAR-PROJECT-KEY, SONAR_HOST_URL)
+                    SonarQube.sonarqube(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
                     }                
                 }
                 
@@ -35,7 +35,7 @@ pipeline {
         stage('Build Docker image for app.py and push it to docker hub') {
             steps {
                 script{
-                    COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DOCKER-REGISTRY, DOCKER-IMAGE)
+                    COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
                 }
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                    COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DOCKER-REGISTRY, DOCKER-IMAGE, OPENSHIFT-PROJECT )
+                    COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
                 }
             }
         }
