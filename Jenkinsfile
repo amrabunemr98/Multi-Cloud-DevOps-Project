@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                 
-                        BuildUnittest.BuildAppAndUnitTest(dockerfileapp)
+                        BuildUnittest(dockerfileapp)
                 }
             }
         }
