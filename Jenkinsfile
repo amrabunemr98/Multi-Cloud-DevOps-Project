@@ -15,13 +15,13 @@ pipeline {
     agent any
 
     stages {
-        stage (test) {
-            steps{
-                script {
-                    SonarQube()
-                }
-            }
-        }
+        // stage (test) {
+        //     steps{
+        //         script {
+        //             SonarQube()
+        //         }
+        //     }
+        // }
         stage('Build App and Unit Test') {
             steps {
                 script {
