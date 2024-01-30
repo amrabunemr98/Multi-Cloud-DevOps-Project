@@ -20,7 +20,6 @@ pipeline {
                 script {
                     node {
                         def COMMIT_HASH = BuildAppAndUnitTest.BuildAppAndUnitTest(dockerfileapp)
-                        echo "Commit Hash: ${COMMIT_HASH}"
                     }
                 }
             }
@@ -41,7 +40,6 @@ pipeline {
                 script {
                     node {
                         def COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
-                        echo "Commit Hash: ${COMMIT_HASH}"
                     }
                 }
             }
@@ -52,7 +50,6 @@ pipeline {
                 script {
                     node {
                         def COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
-                        echo "Commit Hash: ${COMMIT_HASH}"
                     }
                 }
             }
