@@ -1,7 +1,7 @@
 @Library('deploy-my-project') _
 def dockerfileapp = 'Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
-def SonarScannerHome = 'tool 'SonarQube''
+def SonarScannerHome = 'tool 'SonarQube'
 def SonarProjectKey = 'test-project'
 def SonarHostUrl = 'http://54.183.182.49:9000'
 def Dockerhub = 'Dockerhub'
