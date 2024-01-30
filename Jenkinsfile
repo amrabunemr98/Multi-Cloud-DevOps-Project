@@ -1,6 +1,6 @@
 @Library('deploy-my-project@main') _
 
-def dockerfileapp = 'Build-UntitTest/'
+def dockerfileapp = 'test/Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
 def SonarScannerHome = 'SonarQube' // Assuming 'SonarQube' is the tool name
 def SonarProjectKey = 'test-project'
