@@ -1,4 +1,4 @@
-@Library('deploy-my-project@main') _
+@Library('deploy-my-project') _
 
 def dockerfileapp = 'Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
