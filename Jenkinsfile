@@ -15,32 +15,25 @@ pipeline {
     agent any
 
     stages {
-        // stage (test) {
-        //     steps{
-        //         script {
-        //             SonarQube()
-        //         }
-        //     }
-        // }
-        // stage('Build App and Unit Test') {
-        //     steps {
-        //         script {
-                
-        //                 BuildUnittest(dockerfileapp)
-        //         }
-        //     }
-        // }
-
-        stage('SonarQube Analysis') {
+        stage('Build App and Unit Test') {
             steps {
                 script {
-                    node {
-                        // SonarQubeTest(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
-                        SonarQubeTest.ll()
-                    }
+                
+                        BuildUnittest(dockerfileapp)
                 }
             }
         }
+
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         script {
+        //             node {
+        //                 // SonarQubeTest(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
+        //                 SonarQubeTest.ll()
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('Build Docker image for app.py and push it to docker hub') {
             steps {
