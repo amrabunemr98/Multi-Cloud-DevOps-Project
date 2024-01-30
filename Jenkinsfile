@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     node {
-                        def COMMIT_HASH = BuildAppAndUnitTest.BuildAppAndUnitTest(dockerfileapp)
+                        BuildAppAndUnitTest.BuildAppAndUnitTest(dockerfileapp)
                     }
                 }
             }
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     node {
-                        def COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
+                        COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
                     }
                 }
             }
@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     node {
-                        def COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
+                        COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
                     }
                 }
             }
