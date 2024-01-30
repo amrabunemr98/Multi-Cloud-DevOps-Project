@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     node {
-                        BuildAppAndUnitTest.BuildAppAndUnitTest(dockerfileapp)
+                        BuildUnittest.BuildAppAndUnitTest(dockerfileapp)
                     }
                 }
             }
