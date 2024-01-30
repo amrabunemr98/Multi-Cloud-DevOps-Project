@@ -1,5 +1,5 @@
 @Library('deploy-my-project') _
-def Path-Docker-Unittest = 'Build-UntitTest/'
+def docker-file-app = 'Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
 def SONAR-SCANNER-HOME = 'tool 'SonarQube''
 def SONAR-PROJECT-KEY = 'test-project'
@@ -19,7 +19,7 @@ pipeline {
         stage('Build App and Unit Test') {
             steps {
                 script{
-                   BuildAppAndUnitTest.BuildAppAndUnitTest(Path-Docker-Unittest)
+                   BuildAppAndUnitTest.BuildAppAndUnitTest(docker-file-app)
                 }
             }
         }
