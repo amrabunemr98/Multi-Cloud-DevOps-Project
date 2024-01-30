@@ -25,9 +25,8 @@ pipeline {
         stage('Build App and Unit Test') {
             steps {
                 script {
-                    node {
-                        BuildUnittest(dockerfileapp)
-                    }
+                
+                        BuildUnittest.BuildAppAndUnitTest(dockerfileapp)
                 }
             }
         }
