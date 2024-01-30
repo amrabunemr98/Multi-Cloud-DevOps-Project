@@ -3,7 +3,7 @@ def getCommitHash() {
 }
 
 
-def BuildandPushDockerImage(string Dockerhub, string DOCKER_REGISTRY, string DOCKER_IMAGE) {
+def BuildandPushDockerImage(Dockerhub, DOCKER_REGISTRY, DOCKER_IMAGE) {
     script {
     def COMMIT_HASH = getCommitHash()
     withCredentials([usernamePassword(credentialsId: 'Dockerhub', usernameVariable: 'DOCKER_REGISTRY_USERNAME', passwordVariable: 'DOCKER_REGISTRY_PASSWORD')]) {
