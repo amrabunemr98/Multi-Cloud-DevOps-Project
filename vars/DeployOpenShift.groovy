@@ -3,7 +3,7 @@ def getCommitHash() {
 }
 
 
-def DeployonOpenShift(string OpenShiftConfig, string DOCKER_REGISTRY, string DOCKER_IMAGE, string OPENSHIFT_PROJECT ) {
+def DeployonOpenShift(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PROJECT ) {
     script {
     def COMMIT_HASH = getCommitHash()
     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
