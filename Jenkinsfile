@@ -41,7 +41,7 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                    COMMIT_HASH = DeployOpenShift.openshiftdeploy(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
+                    COMMIT_HASH = DeployOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
                 }
             }
         }
