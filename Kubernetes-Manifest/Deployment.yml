@@ -26,11 +26,11 @@ spec:
               cpu: "0.1"   # CPU request
               memory: "128Mi"   # Memory request   
           volumeMounts:
-            - name: project-pvc
+            - name: pvc
               mountPath: /var/www/html
 
 
       volumes:
-        - name: project-pvc
+        - name: pvc
           persistentVolumeClaim:
-            claimName: nginx-pvc
+            claimName: project-pvc
