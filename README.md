@@ -73,15 +73,15 @@ sudo chmod +x build.sh
  
   - **[http://your_ec2_ip:9000](http://your_ec2_ip:9000) ▶️ 👤UserName: admin  & 🔒PassWord: admin ▶️ create new PassWord**
  
- ![Screenshot from 2024-01-31 14-40-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/65065f8c-ab6a-4916-944a-696340d7b227)
+    ![Screenshot from 2024-01-31 14-40-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/65065f8c-ab6a-4916-944a-696340d7b227)
 
   - **Create Project:**
 
-![Screenshot from 2024-01-31 14-43-55_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/180202da-50d5-4e4e-8c7d-89090d5d9f66)
+    ![Screenshot from 2024-01-31 14-43-55_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/180202da-50d5-4e4e-8c7d-89090d5d9f66)
 
   - **Create Token to use in Jenkins:**
 
-![Screenshot from 2024-01-31 14-44-49_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e36e580d-2662-4441-ae58-79e13ae4870f)
+    ![Screenshot from 2024-01-31 14-44-49_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e36e580d-2662-4441-ae58-79e13ae4870f)
 
 **7.Creating Docker-Hub Token:**
 
@@ -95,14 +95,24 @@ sudo chmod +x build.sh
 
   - **After running Terraform to deploy the infrastructure, i can find the generated login password**
 
-![Screenshot from 2024-01-31 14-20-13_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e1a78768-5aca-4139-bfab-496bc2970fe0)
+    ![Screenshot from 2024-01-31 14-20-13_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e1a78768-5aca-4139-bfab-496bc2970fe0)
 
-![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
+    ![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
 
   - **Adding Credentials:**
     
     ![Screenshot from 2024-01-31 14-54-05_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/9171826c-4ac6-41e3-9704-609212c2a2fe)
     ![Screenshot from 2024-01-31 14-59-21_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/7713987e-aa72-4c60-8021-6f009cda42bd)
+
+  - **Enable SonarQube analysis in my Jenkins pipeline:**
+    - **Install SonarQube Plugin:** 
+
+      ![Screenshot from 2024-01-31 14-53-07_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/34e2bcdf-907b-49ec-9510-cbde6d712439)
+
+    - **Configure SonarQube in Jenkins:**
+      ![Screenshot from 2024-01-31 15-00-27_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/86d0ad2c-e007-42ba-b5ca-90a6daefcf12)
+
+
 
 
 
