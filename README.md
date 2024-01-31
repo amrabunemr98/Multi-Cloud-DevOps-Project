@@ -10,7 +10,7 @@
 - The primary objective of Deploy Spring Boot APP on OpenShift Cluster using Jenkins is to establish an end-to-end DevOps pipeline that seamlessly integrates various cloud services, automates infrastructure provisioning, configuration management, and facilitates continuous integration and deployment. This project is designed to showcase best practices for managing a modern, cloud-native application stack while promoting collaboration and automation.
 
 ## :gear: Requirements:-
-- :white_check_mark: Github
+:white_check_mark: Github
 - :white_check_mark: Terraform
 - :white_check_mark: AWS
 - :white_check_mark: Docker 
