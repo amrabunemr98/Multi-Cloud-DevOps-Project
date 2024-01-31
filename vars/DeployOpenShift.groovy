@@ -1,9 +1,14 @@
+def call {
+    openshiftdeploy
+    test
+}
+
 def getCommitHash() {
     return sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
 }
 
 
-def call(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PROJECT ) {
+def openshiftdeploy(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PROJECT ) {
     script {
     def COMMIT_HASH = getCommitHash()
     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
@@ -16,3 +21,9 @@ def call(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PROJECT ) {
         return COMMIT_HASH
     }
 }
+
+def test {
+    echo "hello"
+}
+
+
