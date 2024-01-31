@@ -9,8 +9,14 @@ spec:
       app: project-app
   policyTypes:
   - Ingress
+  - Egress
   ingress:
   - from:
+    - podSelector:
+        matchLabels:
+          app: project-app
+  egress:
+  - to:
     - podSelector:
         matchLabels:
           app: project-app
