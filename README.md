@@ -38,7 +38,7 @@ git clone https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project.git
 **2. Sign in to the AWS Management Console :arrow_right: Select "Users" from the Dashboard :arrow_right: Go to the "Security credentials" tab :arrow_right: Under "Access keys," click "Create access key"**
 
 ![Screenshot from 2024-01-31 13-44-32_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/bd72cfa7-07a4-4829-8cd4-392d39dd90d3)
-
+------------------------------------------------
 **3.Open local terminal to add AWS credentials:**
 ```
 cd .aws/
@@ -50,8 +50,9 @@ nano credentials
 ![Screenshot from 2024-01-31 13-48-05_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/ea2869a7-9939-47dd-ab20-4dbab61bea94)
 
 ![Screenshot from 2024-01-31 13-47-29_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/b52e5515-2ae8-47f0-b787-a4f3d56fab14)
+------------------------------------------------------------------------
 
-**4.Run [Bash Script](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Build.sh) :**
+**5.Run [Bash Script](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Build.sh) :**
 ```
 sudo chmod +x build.sh
 ```
