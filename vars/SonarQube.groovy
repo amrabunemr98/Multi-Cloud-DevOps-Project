@@ -10,7 +10,7 @@ def call(Token_Sonar, SONAR_PROJECT_KEY, SONAR_HOST_URL) {
                 -Dsonar.host.url=${SONAR_HOST_URL} \
                 -Dsonar.login=${SONAR_TOKEN} \
                 -Dsonar.scm.provider=git \
-                -Dsonar.java.binaries=/build/classes
+                -Dsonar.java.binaries=./classes
             """
         }
     }
