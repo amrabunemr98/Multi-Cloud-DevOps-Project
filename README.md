@@ -20,7 +20,7 @@
 - :white_check_mark: Jenkins
 
 ## :scroll: Project Structure:-
-- Github: GitHub Actions workflow directory containing the CI/CD configuration.
+- **GitHub:** GitHub Actions workflow directory containing the CI/CD configuration.
 - Terraform: Configurations for provisioning infrastructure on AWS such as VPC, Subnets, EC2, S3 Bucket, CloudWatch, SNS and more.
 - Ansible: Automating the configuration of EC2 by installing: SonarQube, Jenkins and Openshift CLI.
 - Docker: Building Dockerfiles for Spring Boot App.
