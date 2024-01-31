@@ -51,7 +51,13 @@ nano credentials
 
 ![Screenshot from 2024-01-31 13-47-29_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/b52e5515-2ae8-47f0-b787-a4f3d56fab14)
 
-
+**4.Run [Bash Script](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Build.sh) :**
+```
+sudo chmod +x build.sh
+```
+```
+./build.sh
+```
  
 
 
