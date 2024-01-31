@@ -22,13 +22,13 @@ pipeline {
             }
         }
 
-        // stage('SonarQube Analysis') {
-        //     steps {
-        //         script {
-        //             SonarQube(Token_Sonar, SonarProjectKey, SonarHostUrl)
-        //         }
-        //     }
-        // }
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    SonarQube(Token_Sonar, SonarProjectKey, SonarHostUrl)
+                }
+            }
+        }
 
         stage('Build Docker image for app.py and push it to docker hub') {
             steps {
@@ -41,7 +41,7 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                    COMMIT_HASH = DeployOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
+                    COMMIT_HASH = DeployOpenShift.openshiftdeploy(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
                 }
             }
         }
