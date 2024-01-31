@@ -33,7 +33,7 @@ pipeline {
         stage('Build Docker image for app.py and push it to docker hub') {
             steps {
                 script {
-                    COMMIT_HASH = BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
+                    COMMIT_HASH = BuildPushApp(Dockerhub, DockerRegistry, DockerImage)
                 }
             }
         }
