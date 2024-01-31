@@ -22,7 +22,7 @@ def openshiftdeploy(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PR
     }
 }
 
-def test {
+def test() {
     echo "hello"
 }
 
