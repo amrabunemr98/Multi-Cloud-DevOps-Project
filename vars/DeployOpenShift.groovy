@@ -8,8 +8,8 @@ def call(OpenShiftConfig, DOCKER_REGISTRY, DOCKER_IMAGE, OPENSHIFT_PROJECT ) {
     def COMMIT_HASH = getCommitHash()
     withCredentials([file(credentialsId: 'OpenShiftConfig', variable: 'OPENSHIFT_SECRET')]) {
         // Download and install OpenShift Client Tools
-        def ocHome = tool 'openshift'
-        env.PATH = "${ocHome}/:${env.PATH}"  
+        // def ocHome = tool 'openshift'
+        // env.PATH = "${ocHome}/:${env.PATH}"  
         // Replace the placeholder with the actual Docker image in the Kubernetes YAML files
         sh "sed -i 's|image:.*|image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:Build-${COMMIT_HASH}-APP|g' Kubernetes-Manifest/Deployment.yml"
         
