@@ -30,7 +30,7 @@
 - **OpenShift Cluster:** Kubernetes manifests for deploying the app and centralized monitoring/logging on OpenShift.
 - **Jenkins:** Configures a Release Pipeline for automated build, test, push, and deployment processes.
 ***
-
+## :computer: Quick Start Guide:
 
  
 
