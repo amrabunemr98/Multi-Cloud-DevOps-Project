@@ -1,0 +1,11 @@
+---
+- name: EC2 Configuration
+  gather_facts: true
+  hosts: aws_ec2
+  become: true
+  roles:
+    - prerequisite
+    - postgres
+    - sonarqube
+    - Jenkins
+    - OpenShift

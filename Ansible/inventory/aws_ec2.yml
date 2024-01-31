@@ -1,0 +1,15 @@
+---
+plugin: amazon.aws.aws_ec2
+aws_profile: Terraform
+regions:
+  - us-west-1
+filter: 
+  tag:Name:
+  - 'Public-Instance-0'
+hostnames:
+- ip-address
+use_contrib_script_compatible_sanitization: True
+use_contrib_script_compatible_ec2_tag_keys: True
+
+
+  

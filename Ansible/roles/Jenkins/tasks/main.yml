@@ -1,0 +1,78 @@
+---
+# tasks file for roles/jenkins
+
+    - name: Import jenkins key from url
+      become: true
+      apt_key:
+        state: present
+        url: https://pkg.jenkins.io/debian/jenkins.io-2023.key 
+
+    - name: Download Long Term Jenkins release
+      become: true
+      apt_repository:
+        repo: 'deb https://pkg.jenkins.io/debian-stable binary/'
+        state: present
+
+    - name: Install jenkins
+      become: true
+      apt:
+        name: jenkins
+        state: latest
+
+    - name: Update Jenkins
+      apt:
+        name: jenkins
+        update_cache: true
+      become: true
+
+    - name: Start jenkins
+      become: true
+      service:
+        name: jenkins
+        state: started
+
+    - name: Update APT package manager cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Change ownership of /var/run/docker.sock
+      file:
+        path: /var/run/docker.sock
+        group: docker
+        state: touch
+
+    - name: Grant read-write permissions to docker group for /var/run/docker.sock
+      file:
+        path: /var/run/docker.sock
+        mode: "0666"
+
+    - name: Add jenkins user to the docker group
+      user:
+        name: jenkins
+        groups: docker
+        append: yes
+
+    - name: Restart Docker Service
+      service:
+        name: docker
+        state: restarted
+
+    - name: Restart Jenkins service
+      service:
+        name: jenkins
+        state: restarted
+
+    - name: Retrieve Jenkins admin password
+      command: "cat /var/lib/jenkins/secrets/initialAdminPassword"
+      register: admin_password
+      changed_when: false
+
+
+    - name: Display Jenkins admin password
+      debug:
+        var: admin_password.stdout

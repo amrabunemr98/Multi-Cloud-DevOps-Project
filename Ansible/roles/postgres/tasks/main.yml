@@ -1,0 +1,27 @@
+---
+# tasks file for roles/postgres
+    - name: Install postgres
+      apt:
+        name:
+          - postgresql
+          - postgresql-contrib
+        update_cache: yes
+        state: present
+
+    - name: Start postgres
+      systemd:
+        name: postgresql
+        enabled: yes
+        state: started
+
+    - name: Create SonarQube User
+      command: sudo -u postgres psql -c "CREATE USER "{{ psql_sonar_user }}" WITH PASSWORD '{{ psql_sonar_pass }}';"
+      ignore_errors: yes
+
+    - name: Create SonarQube Database
+      command: sudo -u postgres psql -c "CREATE DATABASE "{{ psql_sonar_db }}" OWNER "{{ psql_sonar_user }}";"
+      ignore_errors: yes
+
+    - name: Grant Privileges to SonarQube User
+      command: sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE "{{ psql_sonar_db }}" TO "{{ psql_sonar_user }}";"
+      ignore_errors: yes

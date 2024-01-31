@@ -1,0 +1,42 @@
+---
+    - name: Download OpenShift client
+      ansible.builtin.get_url:
+        url: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.10.1/openshift-client-linux.tar.gz
+        dest: /tmp/openshift-client-linux.tar.gz
+
+    - name: Extract OpenShift client on the remote host
+      ansible.builtin.shell:
+        cmd: "tar -zxvf /tmp/openshift-client-linux.tar.gz -C /tmp"
+        executable: /bin/bash
+
+    - name: Show the contents of /tmp directory on the remote host
+      ansible.builtin.shell:
+        cmd: "ls -l /tmp"
+        executable: /bin/bash
+      register: ls_output
+
+    - debug:
+        var: ls_output.stdout_lines
+
+    - name: Copy oc to Ansible controller
+      ansible.builtin.fetch:
+        src: "/tmp/oc"
+        dest: "/tmp/"
+        flat: yes
+
+    - name: Copy oc to /usr/local/bin on Ansible controller
+      ansible.builtin.copy:
+        src: "/tmp/oc"
+        dest: "/usr/local/bin/"
+        mode: '0755'
+
+    # - name: Create .kube directory
+    #   ansible.builtin.file:
+    #     path: "/home/ubuntu/.kube"
+    #     state: directory
+
+    # - name: Copy kube config from local machine to remote host
+    #   ansible.builtin.copy:
+    #     src: "/home/abunemr/.kube/config"
+    #     dest: "/home/ubuntu/.kube/config"
+    #     mode: '0644'

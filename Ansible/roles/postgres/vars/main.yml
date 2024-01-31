@@ -1,0 +1,5 @@
+---
+# vars file for roles/postgres
+psql_sonar_pass : pass
+psql_sonar_user : sonarqube
+psql_sonar_db : sonarqube
