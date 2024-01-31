@@ -18,29 +18,23 @@ pipeline {
         stage('Build App and Unit Test') {
             steps {
                 script {
-                
-                        BuildUnittest.BuildAppAndUnitTest(dockerfileapp)
+                    BuildUnittest(dockerfileapp)
                 }
             }
         }
 
-        // stage('SonarQube Analysis') {
-        //     steps {
-        //         script {
-        //             node {
-        //                 // SonarQubeTest(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
-        //                 SonarQubeTest.ll()
-        //             }
-        //         }
-        //     }
-        // }
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    SonarQube(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
+                }
+            }
+        }
 
         stage('Build Docker image for app.py and push it to docker hub') {
             steps {
                 script {
-                    node {
-                        COMMIT_HASH = BuildandPushDockerImage.BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
-                    }
+                    COMMIT_HASH = BuildandPushDockerImage(Dockerhub, DockerRegistry, DockerImage)
                 }
             }
         }
@@ -48,9 +42,7 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                    node {
-                        COMMIT_HASH = DeployOpenShift.DeployonOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
-                    }
+                    COMMIT_HASH = DeployOpenShift(OpenShiftConfig, DockerRegistry, DockerImage, OpenShiftProject)
                 }
             }
         }
