@@ -75,17 +75,24 @@ sudo chmod +x build.sh
  
  ![Screenshot from 2024-01-31 14-40-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/65065f8c-ab6a-4916-944a-696340d7b227)
 
-- **Create Project:**
+  - **Create Project:**
 ![Screenshot from 2024-01-31 14-43-55_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/180202da-50d5-4e4e-8c7d-89090d5d9f66)
 
-- **Create Token to use in Jenkins:**
+  - **Create Token to use in Jenkins:**
+
 ![Screenshot from 2024-01-31 14-44-49_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e36e580d-2662-4441-ae58-79e13ae4870f)
 
 **7.Creating Docker-Hub Token:**
+
 ![Screenshot from 2024-01-31 14-56-37_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/2cde350f-93c5-44b1-ab24-61f8c843aa4c)
 
 
 **8.Access Jenkins, Create Pipeline, Add Credentials and Install Plugin:**
+
+  - **After running Terraform to deploy the infrastructure, i can find the generated login password**
+  - 
+![Screenshot from 2024-01-31 14-20-13_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e1a78768-5aca-4139-bfab-496bc2970fe0)
+
 ![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
 
 
