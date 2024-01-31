@@ -127,6 +127,18 @@ sudo chmod +x build.sh
 
 **11.Run the [Jenkinsfile](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Jenkinsfile) in Pipeline which includes various stages like [Unit-Testing](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/BuildUnittest.groovy), [SonarQube-Analysis](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/SonarQube.groovy), [Building and Running a Docker image](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/BuildPushApp.groovy) and [Deploying App to OpenShift Cluster](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/DeployOpenShift.groovy) :**
 
+![Screenshot from 2024-01-31 16-36-55_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/6e176783-500d-4eab-8225-248095ce80f0)
+
+![Screenshot from 2024-01-31 16-37-21_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/2f45115b-5026-4d76-9769-bed5de8bfd22)
+
+![Screenshot from 2024-01-31 16-37-48_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/b154991c-a842-4552-91de-65fe050865ca)
+
+![Screenshot from 2024-01-31 16-38-09_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/f3dcace4-fbfc-46ef-8ecc-2b5655b7ae6a)
+
+**12.Once the Jenkins pipeline has successfully completed and deployed my [Manifest-Files](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Kubernetes-Manifest) and Application to the OpenShift cluster, I can verify its status:**
+
+
+
 
    
 
