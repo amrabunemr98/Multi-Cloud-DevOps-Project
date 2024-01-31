@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Project-App
+  name: project-app
   namespace: abu-nemr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Project-App
+      app: project-app
   template:
     metadata:
       labels:
-        app: Project-App
+        app: project-app
     spec:
       containers:
         - name: container
@@ -26,11 +26,11 @@ spec:
               cpu: "0.1"   # CPU request
               memory: "128Mi"   # Memory request   
           volumeMounts:
-            - name: Project-PVC
+            - name: project-pvc
               mountPath: /var/www/html
 
 
       volumes:
-        - name: Project-PVC
+        - name: project-pvc
           persistentVolumeClaim:
             claimName: nginx-pvc
