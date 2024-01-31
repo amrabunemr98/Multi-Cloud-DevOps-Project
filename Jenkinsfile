@@ -6,7 +6,7 @@ def SonarProjectKey = 'test-project'
 def SonarHostUrl = 'http://52.53.151.32:9000'
 def Dockerhub = 'Dockerhub'
 def DockerRegistry = "amrabunemr98"
-def DockerImage = "Project-APP"
+def DockerImage = "project-app"
 def OpenShiftConfig = "OpenShiftConfig"
 def OpenShiftProject = 'abu-nemr'
 
