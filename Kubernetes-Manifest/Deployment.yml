@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Project-App
+  namespace: abu-nemr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Project-App
+  template:
+    metadata:
+      labels:
+        app: Project-App
+    spec:
+      containers:
+        - name: container
+          image: docker.io/amrabunemr98/test:build-${BUILD_NUMBER}-app
+          ports:
+            - containerPort: 8080
+          resources:   # Resource limits and requests for the container
+            limits:
+              cpu: "0.5"   # CPU limit
+              memory: "512Mi"   # Memory limit
+            requests:
+              cpu: "0.1"   # CPU request
+              memory: "128Mi"   # Memory request   
+          volumeMounts:
+            - name: Project-PVC
+              mountPath: /var/www/html
+
+
+      volumes:
+        - name: Project-PVC
+          persistentVolumeClaim:
+            claimName: nginx-pvc

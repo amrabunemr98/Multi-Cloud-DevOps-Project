@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: test
+  namespace: abu-nemr
+spec:
+  to:
+    kind: Service
+    name: SVC-APP
+  port:
+    targetPort: 8080
+  wildcardPolicy: None

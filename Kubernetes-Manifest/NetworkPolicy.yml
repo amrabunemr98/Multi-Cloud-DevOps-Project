@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: Policy-APP
+  namespace: abu-nemr
+spec:
+  podSelector:
+    matchLabels:
+      app: Project-App
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: Project-App
