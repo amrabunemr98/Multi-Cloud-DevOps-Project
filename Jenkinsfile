@@ -2,7 +2,6 @@
 
 def dockerfileapp = 'Build-UntitTest/'
 def Token_Sonar = 'Token_Sonar'
-def SonarScannerHome = "tool = 'SonarQube'" // Assuming 'SonarQube' is the tool name
 def SonarProjectKey = 'test-project'
 def SonarHostUrl = 'http://54.183.182.49:9000'
 def Dockerhub = 'Dockerhub'
@@ -26,7 +25,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    SonarQube(Token_Sonar, SonarScannerHome, SonarProjectKey, SonarHostUrl)
+                    SonarQube(Token_Sonar, SonarProjectKey, SonarHostUrl)
                 }
             }
         }
