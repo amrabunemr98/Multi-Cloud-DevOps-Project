@@ -6,7 +6,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: SVC-APP
+    name: svc-app
   port:
     targetPort: 8080
   wildcardPolicy: None
