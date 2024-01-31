@@ -70,7 +70,9 @@ sudo chmod +x build.sh
  ![Screenshot from 2024-01-31 14-25-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/a2b3cb3f-4167-454e-9873-d823ad51db70)
 
  **6.Access SonarQube Web and Create Project and Token:**
- **- http//your_ec2_ip:9090 : 👤UserName: admin & 🔒PassWord: admin then create new PassWord**
+ 
+ - **[http://your_ec2_ip:9000](http://your_ec2_ip:9000) : 👤UserName: admin & 🔒PassWord: admin then create new PassWord**
+ 
  ![Screenshot from 2024-01-31 14-40-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/65065f8c-ab6a-4916-944a-696340d7b227)
 
  
