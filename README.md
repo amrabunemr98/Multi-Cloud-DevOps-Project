@@ -31,7 +31,11 @@
 - **Jenkins:** Configures a Release Pipeline for automated build, test, push, and deployment processes.
 ***
 ## :computer: Quick Start Guide:
-
+1. Clone the Repository:
+```
+git clone https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project.git
+```
+2. Sign in to the AWS Management Console :arrow_right: Select "Users" from the Dashboard :arrow_right: Go to the "Security credentials" tab :arrow_right: Under "Access keys," click "Create access key"
  
 
 
