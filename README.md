@@ -107,10 +107,33 @@ sudo chmod +x build.sh
   - **Enable SonarQube analysis in my Jenkins pipeline:**
     - **Install SonarQube Plugin:** 
 
-      ![Screenshot from 2024-01-31 14-53-07_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/34e2bcdf-907b-49ec-9510-cbde6d712439)
+      ![Screenshot from 2024-01-31 14-53-07_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/8e9755e0-7e29-4e53-8d01-b8eddd9363a3)
 
     - **Configure SonarQube in Jenkins:**
-      ![Screenshot from 2024-01-31 15-00-27_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/86d0ad2c-e007-42ba-b5ca-90a6daefcf12)
+      ![Screenshot from 2024-01-31 15-00-27_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/cf4ada7a-dc90-4244-b376-72879f83de94)
+
+**10.Create and Configure Pipeline:**    
+
+![Screenshot from 2024-01-31 15-01-08_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/44ef6eca-d9ca-4688-b0a3-ebeb7ce5acff)
+
+-  **Configure a GitHub webhook to trigger the pipeline on repository pushes:**
+
+   ![Screenshot from 2024-01-31 16-51-30_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/3baa9280-d704-4fde-8682-ebe1472eb21b)
+   ![Screenshot from 2024-01-31 15-01-30_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/fd2840ba-fbc7-4680-95b3-c404df377d08)
+
+- **Add [Shared Library](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/vars) in Configure System:**
+
+  ![Screenshot from 2024-01-31 15-09-53_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/770fd971-ef2b-4937-a557-44eeca510ff1)
+
+**11.Run the [Jenkinsfile](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Jenkinsfile) in Pipeline which includes various stages like [Unit-Testing](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/BuildUnittest.groovy), [SonarQube-Analysis](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/SonarQube.groovy), [Building and Running a Docker image](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/BuildPushApp.groovy) and [Deploying App to OpenShift Cluster](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/vars/DeployOpenShift.groovy) :**
+
+
+   
+
+
+
+
+
 
 
 
