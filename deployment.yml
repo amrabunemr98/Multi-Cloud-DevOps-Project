@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-app
+  name: Project-App
   namespace: abu-nemr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-app
+      app: Project-App
   template:
     metadata:
       labels:
-        app: test-app
+        app: Project-App
     spec:
       containers:
         - name: container
@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-app
+  name: SVC-APP
   namespace: abu-nemr
 spec:
   selector:
-    app: test-app
+    app: Project-App
   ports:
     - protocol: TCP
       port: 8080
@@ -43,7 +43,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: svc-app
+    name: SVC-APP
   port:
     targetPort: 8080
   wildcardPolicy: None
