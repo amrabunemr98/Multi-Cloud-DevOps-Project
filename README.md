@@ -35,7 +35,7 @@
 ```
 git clone https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project.git
 ```
-**2. Sign in to the AWS Management Console:arrow_right:Select "Users" from the Dashboard:arrow_right:Go to the "Security credentials" tab:arrow_right:Under "Access keys," click "Create access key"**
+**2. Sign in to the AWS Management Console :arrow_right: Select "Users" from the Dashboard :arrow_right: Go to the "Security credentials" tab :arrow_right: Under "Access keys," click "Create access key"**
 
 ![Screenshot from 2024-01-31 13-44-32_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/bd72cfa7-07a4-4829-8cd4-392d39dd90d3)
 ------------------------------------------------
@@ -51,16 +51,31 @@ nano credentials
 
 ![Screenshot from 2024-01-31 13-47-29_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/b52e5515-2ae8-47f0-b787-a4f3d56fab14)
 ------------------------------------------------------------------------
-**4.Navigate to the EC2 Console:arrow_right:Access "Key Pairs" Section:arrow_right:Create Key Pair:arrow_right:Download the Key Pair
 
-**5.Run [Bash Script](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Build.sh) :**
+**4.Navigate to the EC2 Console :arrow_right: Access "Key Pairs" Section :arrow_right: Create Key Pair :arrow_right: Download the Key Pair:**
+```
+sudo chmod 400 Project.pem
+```
+![Screenshot from 2024-01-31 13-49-56_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/cdf4d3a3-703e-4685-a2a7-3ab38ed43be5)
+
+
+**5.Run [Bash Script](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/blob/main/Build.sh) that Run [Terraform](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform) and [Ansible](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Ansible):**
 ```
 sudo chmod +x build.sh
 ```
 ```
 ./build.sh
 ```
+ ![Screenshot from 2024-01-31 14-19-52_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/452f7ee4-5ebe-414a-b94d-29c39bae0e96)
+ ![Screenshot from 2024-01-31 14-25-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/a2b3cb3f-4167-454e-9873-d823ad51db70)
+
+ **6.Access SonarQube Web and Create Project and Token:**
+ **- http//your_ec2_ip:9090 : 👤UserName: admin & 🔒PassWord: admin then create new PassWord**
+ ![Screenshot from 2024-01-31 14-40-16_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/65065f8c-ab6a-4916-944a-696340d7b227)
+
  
+
+
 
 
 
