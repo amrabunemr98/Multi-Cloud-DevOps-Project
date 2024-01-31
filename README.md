@@ -21,12 +21,13 @@
 
 ## :scroll: Project Structure:-
 - **GitHub:** GitHub Actions workflow directory containing the CI/CD configuration.
-- Terraform: Configurations for provisioning infrastructure on AWS such as VPC, Subnets, EC2, S3 Bucket, CloudWatch, SNS and more.
-- Ansible: Automating the configuration of EC2 by installing: SonarQube, Jenkins and Openshift CLI.
-- Docker: Building Dockerfiles for Spring Boot App.
-- SonarQube: Ensures code quality, security, bug detection and upholding high software standards in our Spring Boot development.
-- OpenShift Cluster: Creating Kubernetes manifests for deploying Spring Boot App and centralized monitoring and logging on OpenShift for container logs.
-- Jenkins: Configuring a Release Pipeline to automate the build, test, push and deployment process.
+- **Terraform:** Configurations for AWS infrastructure provisioning (VPC, Subnets, EC2, S3 Bucket, CloudWatch, SNS, etc.).
+- **Ansible:** Automated setup of EC2 instances with SonarQube, Jenkins, and OpenShift CLI.
+- **Docker:** Dockerfiles for building Spring Boot App containers.
+- **SonarQube:** Ensures code quality, security, and upholds high standards in Spring Boot development.
+- **OpenShift Cluster:** Kubernetes manifests for deploying the app and centralized monitoring/logging on OpenShift.
+- **Jenkins:** Configures a Release Pipeline for automated build, test, push, and deployment processes.
+
 
  
 
