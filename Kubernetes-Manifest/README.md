@@ -65,8 +65,7 @@ spec:
             app: project-app
 ```
 ## Persistent Volume Claim (pvc.yml)
-```
-apiVersion: v1
+```apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: project-pvc
