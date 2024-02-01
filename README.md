@@ -135,7 +135,85 @@ sudo chmod +x build.sh
 
 ![Screenshot from 2024-01-31 16-38-09_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/f3dcace4-fbfc-46ef-8ecc-2b5655b7ae6a)
 
+
 **12.Once the Jenkins pipeline has successfully completed and deployed my [Manifest-Files](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Kubernetes-Manifest) and Application to the OpenShift cluster, I can verify its status:**
+
+![Screenshot from 2024-01-31 16-53-45_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/a1d48969-6a94-4400-bfe1-bcc13e427d73)
+
+![Screenshot from 2024-01-31 16-16-51_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/af2a7a5f-f08c-4617-a4a9-3aaec8097037)
+
+***
+## ☑️Review AWS Resources:
+-  The primary goal is to create a robust environment featuring [Infrastructure](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform) with carefully configured: ([Subnets](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/Subnet), [Route Table](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/RT), [VPC](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/VPC), [Security Group](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/SG), [Internet Gateway](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/IGW). Additionally, an EC2 instance will be provisioned specifically for hosting OpenShift CLI, SonarQube and Jenkins. To ensure effective monitoring, CloudWatch will be implemented, complete with alarms configured to send notifications through SNS. I utilized Amazon S3 Bucket to store the Terraform state file (tfstate)
+
+- **[EC2](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/EC2):**
+  
+  ![Screenshot from 2024-01-31 16-42-10_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/9cc4fb87-2dfe-42b3-969c-ffdc269642ee)
+
+- **[CloudWatch](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/CloudWatch):**
+  
+  ![Screenshot from 2024-01-31 16-43-14_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a31f11e-e519-472d-9d52-5a8d181e49b6)
+
+- **[SNS](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/CloudWatch):**
+  
+  ![Screenshot from 2024-01-31 16-44-27_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/3d2169e2-9bba-4524-9130-724f092e4fad)
+
+  ![Screenshot from 2024-01-31 14-31-52_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/dd45cc5d-191b-4af2-a2a9-2a9817d55514)
+
+  ![Screenshot from 2024-01-31 16-44-52_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/7de26456-9fe0-47f9-9ab5-62fa7203a0ba)
+
+  ![Screenshot from 2024-02-01 00-34-10](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/b924740d-b878-4050-a8bf-9015064f9d1a)
+
+- **[S3](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/S3):**
+  
+  ![Screenshot from 2024-01-31 16-52-06_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/9179f0eb-81d0-42b2-982b-51571d810b8d)
+
+## 📈Monitoring and Logging on OpenShift Cluster:
+> [!IMPORTANT]
+> Install Elasticsearch First, Then Logging because Elasticsearch is a fundamental component for storing and indexing logs efficiently. Red Hat Logging builds on Elasticsearch to provide enhanced log management and analysis capabilities.
+> Logging is the process of recording events, activities, or messages that occur in a system or application over a specific period. It involves capturing data, such as error messages, warnings, and informational events, for analysis, troubleshooting, and monitoring that Popular Log Visualization Tools is Kibana (Integrates with Elasticsearch for log analysis and visualization).
+
+![Screenshot from 2024-01-31 17-27-24_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/c10a7766-af7f-4ed3-9d70-679407e90d87)
+
+- **Setup Elasticsearch Operator:**
+  
+  ![Screenshot from 2024-01-31 17-32-32_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/44e6c3ec-0965-473a-8b5a-bb7131166f79)
+
+  ![Screenshot from 2024-01-31 17-31-45_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/73c3a09b-e6f9-461e-af11-e684ca65882c)
+
+  ![Screenshot from 2024-01-31 17-32-12_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/a9da9d7e-59c1-4759-a6ce-2141c66a466f)
+
+- **Setup Red Hat Logging (based on Elasticsearch Operator):**
+
+  ![Screenshot from 2024-01-31 17-24-18_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/6b9550d1-5ae0-4b7b-b6de-d8f6dccb1b78)
+
+  ![Screenshot from 2024-01-31 17-25-14_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/a88aa1a2-9fc5-48a5-9381-3cf1288f4bde)
+
+  ![Screenshot from 2024-01-31 17-26-28_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/22eadfb7-a655-41d7-bd7d-3e792fc51572)
+
+  ![Screenshot from 2024-01-31 17-26-35_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/c3258c19-a51e-4967-a4df-dbd6f9c446e8)
+
+
+> [!TIP]
+> Ensure that you have the necessary permissions and security measures in place for accessing AWS resources and sensitive data.
+> Make sure the bash script and Jenkinsfile are appropriately structured and contain the necessary commands and configurations.
+
+## :tada: Conclusion:-
+- Through a series of carefully orchestrated steps, I've built a fully automated CI/CD pipeline for Spring Boot APP, leveraging an array of powerful tools and technologies. Throughout this project, I've gained practical experience in provisioning infrastructure with Terraform, configuring services using Ansible, containerizing applications with Docker, ensuring code quality and security using SonarQube, orchestrating deployments on OpenShift Cluster, and automating workflows with Jenkins. By seamlessly integrating these tools, so i have demonstrated a mastery of essential DevOps practices that empower efficient and reliable software delivery.
+  
+
+## :open_book: Additional Resources and References:-
+- Throughout of this project, I found the following resources to be immensely helpful:
+1. Terraform Documentation: [Terraform](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+2. Ansible Documentation: [Ansible](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/aws_ec2_guide.html)
+3. OpenShift Kubernetes Engine: [OpenShift Kubernetes](https://docs.openshift.com/container-platform/4.14/welcome/oke_about.html)
+4. Logging OpenShift Documentation: [Logging OpenShift](https://docs.openshift.com/container-platform/4.12/logging/cluster-logging-deploying.html)
+
+> [!NOTE]
+> Remember that these steps provide a high-level overview of the process. You'll need to fill in the specific commands and configurations for each step based on your project's requirements and your environment. Test each step thoroughly and make adjustments as needed to ensure a smooth and successful deployment process.
+
+
+
 
 
 
