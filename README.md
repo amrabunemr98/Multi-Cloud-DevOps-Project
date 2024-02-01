@@ -99,7 +99,7 @@ sudo chmod +x build.sh
 
     ![Screenshot from 2024-01-31 14-20-13_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e1a78768-5aca-4139-bfab-496bc2970fe0)
     
-  - **Access Jenkins Web [http://your_ec2_ip:9000](http://your_ec2_ip:9000):**
+  - **Access Jenkins Web [http://your_ec2_ip:8080](http://your_ec2_ip:9000):**
     
     ![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
 
