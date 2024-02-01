@@ -38,3 +38,76 @@ spec:
         - name: pvc
           persistentVolumeClaim:
             claimName: project-pvc
+```
+## Network Policy (network-policy.yml)
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: policy-app
+  namespace: abu-nemr
+spec:
+  podSelector:
+    matchLabels:
+      app: project-app
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            app: project-app
+  egress:
+    - to:
+      - podSelector:
+          matchLabels:
+            app: project-app
+```
+## Persistent Volume Claim (pvc.yml)
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: project-pvc
+  namespace: abu-nemr
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: my-ebs
+```
+## Route (route.yml)
+```
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: route-app
+  namespace: abu-nemr
+spec:
+  to:
+    kind: Service
+    name: svc-app
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
+```
+## Service (service.yml)
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-app
+  namespace: abu-nemr
+spec:
+  selector:
+    app: project-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP
+```
+
