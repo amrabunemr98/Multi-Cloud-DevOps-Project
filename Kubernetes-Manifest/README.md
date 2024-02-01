@@ -40,7 +40,7 @@ spec:
             claimName: project-pvc
 ```
 ## Network Policy (network-policy.yml)
-```
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -65,7 +65,8 @@ spec:
             app: project-app
 ```
 ## Persistent Volume Claim (pvc.yml)
-```apiVersion: v1
+```yaml
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: project-pvc
@@ -79,7 +80,7 @@ spec:
   storageClassName: my-ebs
 ```
 ## Route (route.yml)
-```
+```yaml
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -94,7 +95,7 @@ spec:
   wildcardPolicy: None
 ```
 ## Service (service.yml)
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
