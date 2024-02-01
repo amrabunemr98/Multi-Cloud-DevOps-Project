@@ -197,8 +197,8 @@ sudo chmod +x build.sh
 
 
 > [!TIP]
-> Ensure that you have the necessary permissions and security measures in place for accessing AWS resources and sensitive data.
-> Make sure the bash script and Jenkinsfile are appropriately structured and contain the necessary commands and configurations.
+> - Ensure that you have the necessary permissions and security measures in place for accessing AWS resources and sensitive data.
+> - Make sure the bash script and Jenkinsfile are appropriately structured and contain the necessary commands and configurations.
 
 ## :tada: Conclusion:-
 - Through a series of carefully orchestrated steps, I've built a fully automated CI/CD pipeline for Spring Boot APP, leveraging an array of powerful tools and technologies. Throughout this project, I've gained practical experience in provisioning infrastructure with Terraform, configuring services using Ansible, containerizing applications with Docker, ensuring code quality and security using SonarQube, orchestrating deployments on OpenShift Cluster, and automating workflows with Jenkins. By seamlessly integrating these tools, so i have demonstrated a mastery of essential DevOps practices that empower efficient and reliable software delivery.
