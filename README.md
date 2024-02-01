@@ -96,7 +96,9 @@ sudo chmod +x build.sh
   - **After running Terraform to deploy the infrastructure, i can find the generated login password**
 
     ![Screenshot from 2024-01-31 14-20-13_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/e1a78768-5aca-4139-bfab-496bc2970fe0)
-
+    
+  - **Access Jenkins Web [http://your_ec2_ip:9000](http://your_ec2_ip:9000):**
+    
     ![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
 
   - **Adding Credentials:**
@@ -143,7 +145,7 @@ sudo chmod +x build.sh
 ![Screenshot from 2024-01-31 16-16-51_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/af2a7a5f-f08c-4617-a4a9-3aaec8097037)
 
 ***
-## ☑️Review AWS Resources:
+## ☑️ Review AWS Resources:
 -  The primary goal is to create a robust environment featuring [Infrastructure](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform) with carefully configured: ([Subnets](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/Subnet), [Route Table](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/RT), [VPC](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/VPC), [Security Group](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/SG), [Internet Gateway](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/IGW). Additionally, an EC2 instance will be provisioned specifically for hosting OpenShift CLI, SonarQube and Jenkins. To ensure effective monitoring, CloudWatch will be implemented, complete with alarms configured to send notifications through SNS. I utilized Amazon S3 Bucket to store the Terraform state file (tfstate)
 
 - **[EC2](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/tree/main/Terraform/EC2):**
@@ -168,7 +170,7 @@ sudo chmod +x build.sh
   
   ![Screenshot from 2024-01-31 16-52-06_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/9179f0eb-81d0-42b2-982b-51571d810b8d)
 
-## 📈Monitoring and Logging on OpenShift Cluster:
+## 📈 Monitoring and Logging on OpenShift Cluster:
 > [!IMPORTANT]
 > Install Elasticsearch First, Then Logging because Elasticsearch is a fundamental component for storing and indexing logs efficiently. Red Hat Logging builds on Elasticsearch to provide enhanced log management and analysis capabilities.
 > Logging is the process of recording events, activities, or messages that occur in a system or application over a specific period. It involves capturing data, such as error messages, warnings, and informational events, for analysis, troubleshooting, and monitoring that Popular Log Visualization Tools is Kibana (Integrates with Elasticsearch for log analysis and visualization).
