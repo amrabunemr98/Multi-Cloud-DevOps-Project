@@ -172,8 +172,8 @@ sudo chmod +x build.sh
 
 ## 📈 Monitoring and Logging on OpenShift Cluster:
 > [!IMPORTANT]
-> Install Elasticsearch First, Then Logging because Elasticsearch is a fundamental component for storing and indexing logs efficiently. Red Hat Logging builds on Elasticsearch to provide enhanced log management and analysis capabilities.
-> Logging is the process of recording events, activities, or messages that occur in a system or application over a specific period. It involves capturing data, such as error messages, warnings, and informational events, for analysis, troubleshooting, and monitoring that Popular Log Visualization Tools is Kibana (Integrates with Elasticsearch for log analysis and visualization).
+> - Install Elasticsearch First, Then Logging because Elasticsearch is a fundamental component for storing and indexing logs efficiently. Red Hat Logging builds on Elasticsearch to provide enhanced log management and analysis capabilities.
+> - Logging is the process of recording events, activities, or messages that occur in a system or application over a specific period. It involves capturing data, such as error messages, warnings, and informational events, for analysis, troubleshooting, and monitoring that Popular Log Visualization Tools is Kibana (Integrates with Elasticsearch for log analysis and visualization).
 
 ![Screenshot from 2024-01-31 17-27-24_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/c10a7766-af7f-4ed3-9d70-679407e90d87)
 
