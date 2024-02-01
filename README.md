@@ -102,8 +102,7 @@ sudo chmod +x build.sh
     ![Screenshot from 2024-01-31 14-37-17_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/5a8dda2a-3575-41e7-8ccf-f227b825e2d1)
 
   - **Adding Credentials:**
-    -  **To integrate Jenkins with my OpenShift cluster so I should have cluster configuration file (config) from my OpenShift cluster and add it as Secret File in credential of Jenkins:**
-    
+        
     ![Screenshot from 2024-01-31 14-54-05_Original](https://github.com/amrabunemr98/Multi-Cloud-DevOps-Project/assets/128842547/9171826c-4ac6-41e3-9704-609212c2a2fe)
     
     -  **To integrate Jenkins with my OpenShift cluster so I should have cluster configuration file (config) from my OpenShift cluster and add it as Secret File in credential of Jenkins:**
